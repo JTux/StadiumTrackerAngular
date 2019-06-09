@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { LeagueCreate } from '../models/LeagueModels';
+import { LeagueCreate, LeagueEdit } from '../models/LeagueModels';
 
 const Api_Url = "https://localhost:44376/api";
 
@@ -21,6 +21,10 @@ export class LeagueService {
 
   getLeagueByID(id: string) {
     return this._http.get(`${Api_Url}/league/${id}`, { headers: this.getHeaders() });
+  }
+
+  updateLeague(league: LeagueEdit) {
+    return this._http.put(`${Api_Url}/league`, league, { headers: this.getHeaders() });
   }
 
   private getHeaders() {

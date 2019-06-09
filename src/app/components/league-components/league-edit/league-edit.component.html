@@ -1,0 +1,22 @@
+<h1>Update League</h1>
+<hr />
+
+<div *ngIf="league">
+  <form (ngSubmit)="onSubmit()" [formGroup]="editLeagueForm">
+    <div>
+      <div>
+        <mat-form-field>
+          <input matInput placeholder="League ID" formControlName="LeagueID" required [value]="league.LeagueID" />
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field>
+          <input matInput placeholder="League Name" formControlName="LeagueName" required [value]="league.LeagueName" />
+        </mat-form-field>
+      </div>
+    </div>
+    <button mat-raised-button color="primary" type="submit">Save</button>
+  </form>
+</div>
+
+<a mat-button routerLink="/league">Back to List</a>

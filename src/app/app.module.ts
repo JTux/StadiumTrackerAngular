@@ -24,6 +24,7 @@ import { LeagueCreateComponent } from './components/league-components/league-cre
 import { AuthService } from './services/auth.service';
 import { LeagueService } from './services/league.service';
 import { LeagueDetailComponent } from './components/league-components/league-detail/league-detail.component';
+import { LeagueEditComponent } from './components/league-components/league-edit/league-edit.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { LeagueDetailComponent } from './components/league-components/league-det
     LoginComponent,
     LeagueIndexComponent,
     LeagueCreateComponent,
-    LeagueDetailComponent
+    LeagueDetailComponent,
+    LeagueEditComponent
   ],
   imports: [
     AppRoutingModule,
