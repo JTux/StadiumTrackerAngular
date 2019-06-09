@@ -1,4 +1,26 @@
-<app-header></app-header>
-<div style="text-align: center">
-    <router-outlet></router-outlet>
-</div>
+<mat-toolbar class="nav" color="primary">
+    <button mat-button (click)="sidenav.toggle()">
+        <i class="material-icons">
+            menu
+        </i>
+    </button>
+    <div class="filler"></div>
+    <a routerLink="/" class="nav-brand">Stadium Tracker</a>
+    <div class="filler"></div>
+    <button mat-button></button>
+</mat-toolbar>
+<mat-sidenav-container class="side-nav">
+
+    <mat-sidenav #sidenav>
+        <div class="nav-btn-grp">
+            <p><button mat-button class="nav-btn" routerLink="/register">Register</button></p>
+            <p><button mat-button class="nav-btn" routerLink="/login">Login</button></p>
+        </div>
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+        <div style="text-align: center">
+            <router-outlet></router-outlet>
+        </div>
+    </mat-sidenav-content>
+</mat-sidenav-container>

@@ -1,0 +1,41 @@
+.nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 64px;
+    z-index: 2;
+    text-align: right;
+}
+
+.nav-brand {
+    text-decoration: none;
+    color: white;
+}
+
+.nav-brand:hover {
+    color: #ccc;
+}
+
+.filler {
+    flex: 1 1 auto;
+}
+
+mat-sidenav {
+    width: 10em;
+}
+
+.side-nav {
+    padding-top: 64px;
+    height: 100vh;
+}
+
+.nav-btn-grp {
+    margin-top: 80px;
+}
+
+.nav-btn {
+    margin-right: 0.5em;
+    background-color: #132584;
+    color: white;
+    width: 100%;
+}
