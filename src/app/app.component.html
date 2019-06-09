@@ -10,11 +10,24 @@
     <button mat-button></button>
 </mat-toolbar>
 <mat-sidenav-container class="side-nav">
-    <mat-sidenav #sidenav>
+    <mat-sidenav #sidenav class="navigation-menu">
         <div class="nav-btn-grp">
-            <p><button mat-button class="nav-btn" routerLink="/league">Leagues</button></p>
-            <p><button mat-button class="nav-btn" routerLink="/login">Login</button></p>
-            <p><button mat-button class="nav-btn" routerLink="/register">Register</button></p>
+            <div class="nav-route-buttons">
+                <p><button mat-button class="nav-btn" routerLink="/league">Leagues</button></p>
+                <p><button mat-button class="nav-btn" routerLink="/">Teams</button></p>
+                <p><button mat-button class="nav-btn" routerLink="/">Stadiums</button></p>
+                <p><button mat-button class="nav-btn" routerLink="/">Games</button></p>
+                <p><button mat-button class="nav-btn" routerLink="/">Stats</button></p>
+                <p><button mat-button class="nav-btn" routerLink="/">Visitors</button></p>
+            </div>
+        </div>
+        
+        <div class="site-footer">
+            <div class="nav-account-buttons">
+                <p><button mat-button class="nav-btn" routerLink="/login">Login</button></p>
+                <p><button mat-button class="nav-btn" routerLink="/register">Register</button></p>
+            </div>
+            <a routerLink="/">&copy; {{ year }} Stadium Tracker</a>
         </div>
     </mat-sidenav>
     <mat-sidenav-content>
@@ -23,6 +36,3 @@
         </div>
     </mat-sidenav-content>
 </mat-sidenav-container>
-<div class="site-footer">
-    <a routerLink="/">&copy; {{ year }} Stadium Tracker</a>
-</div>

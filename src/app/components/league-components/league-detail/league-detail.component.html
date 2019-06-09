@@ -1,0 +1,15 @@
+<h1>League Details</h1>
+<div *ngIf="league">
+  <div>
+    <label for="">League ID: </label>
+    <span>{{ league.LeagueID }}</span>
+  </div>
+  <div>
+    <label for="">League Name: </label>
+    <span>{{ league.LeagueName }}</span>
+  </div>
+  
+  <button mat-raised-button color="accent" *ngIf="league.UserIsOwner">Edit</button>
+</div>
+
+<button mat-raised-button routerLink="/league" color="primary">Back to List</button>

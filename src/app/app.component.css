@@ -22,7 +22,6 @@
 
 mat-sidenav {
     width: 13em;
-    padding: .5em;
 }
 
 .nav-btn-grp {
@@ -42,8 +41,8 @@ mat-sidenav {
 }
 
 .site-footer {
-    position: fixed;
-    bottom: 0;
+    position: absolute;
+    bottom: .5em;
     left: 0;
     width: 100%;
     z-index: 2;
@@ -52,5 +51,6 @@ mat-sidenav {
 
 .site-footer a {
     color: #555;
+    font-size: .85em;
     text-decoration: none;
 }

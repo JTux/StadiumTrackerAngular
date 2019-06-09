@@ -19,7 +19,7 @@ export class LeagueService {
     return this._http.get(`${Api_Url}/league`, { headers: this.getHeaders() });
   }
 
-  getLeagueByID(id: number) {
+  getLeagueByID(id: string) {
     return this._http.get(`${Api_Url}/league/${id}`, { headers: this.getHeaders() });
   }
 
