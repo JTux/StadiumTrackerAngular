@@ -1,0 +1,15 @@
+<h1>Create a League</h1>
+<hr />
+
+<form (ngSubmit)="onSubmit()" [formGroup]="leagueForm">
+  <div>
+    <div>
+      <mat-form-field>
+        <input matInput placeholder="League Name" formControlName="LeagueName" required />
+      </mat-form-field>
+    </div>
+  </div>
+  <button mat-raised-button color="primary" type="submit">Create League</button>
+</form>
+
+<a mat-button routerLink="/league">Back to League Index</a>

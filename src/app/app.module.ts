@@ -19,6 +19,7 @@ import { AppComponent } from './app.component';
 import { RegistrationComponent } from './components/registration/registration.component';
 import { LoginComponent } from './components/login/login.component';
 import { LeagueIndexComponent } from './components/league-components/league-index/league-index.component';
+import { LeagueCreateComponent } from './components/league-components/league-create/league-create.component';
 
 import { AuthService } from './services/auth.service';
 import { LeagueService } from './services/league.service';
@@ -28,7 +29,8 @@ import { LeagueService } from './services/league.service';
     AppComponent,
     RegistrationComponent,
     LoginComponent,
-    LeagueIndexComponent
+    LeagueIndexComponent,
+    LeagueCreateComponent
   ],
   imports: [
     AppRoutingModule,
