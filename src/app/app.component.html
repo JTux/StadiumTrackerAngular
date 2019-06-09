@@ -10,14 +10,13 @@
     <button mat-button></button>
 </mat-toolbar>
 <mat-sidenav-container class="side-nav">
-
     <mat-sidenav #sidenav>
         <div class="nav-btn-grp">
-            <p><button mat-button class="nav-btn" routerLink="/register">Register</button></p>
+            <p><button mat-button class="nav-btn" routerLink="/league">Leagues</button></p>
             <p><button mat-button class="nav-btn" routerLink="/login">Login</button></p>
+            <p><button mat-button class="nav-btn" routerLink="/register">Register</button></p>
         </div>
     </mat-sidenav>
-
     <mat-sidenav-content>
         <div style="text-align: center">
             <router-outlet></router-outlet>

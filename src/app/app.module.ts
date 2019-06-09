@@ -8,6 +8,7 @@ import {
   MatToolbarModule,
   MatButtonModule,
   MatFormFieldModule,
+  MatTableModule,
   MatInputModule,
   MatSidenavModule,
   MatCheckboxModule
@@ -17,14 +18,17 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { RegistrationComponent } from './components/registration/registration.component';
 import { LoginComponent } from './components/login/login.component';
+import { LeagueIndexComponent } from './components/league-components/league-index/league-index.component';
 
-import { AuthService } from './service/auth.service';
+import { AuthService } from './services/auth.service';
+import { LeagueService } from './services/league.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     RegistrationComponent,
-    LoginComponent
+    LoginComponent,
+    LeagueIndexComponent
   ],
   imports: [
     AppRoutingModule,
@@ -37,11 +41,13 @@ import { AuthService } from './service/auth.service';
     MatFormFieldModule,
     MatInputModule,
     MatSidenavModule,
+    MatTableModule,
     MatToolbarModule,
     ReactiveFormsModule
   ],
   providers: [
-    AuthService
+    AuthService,
+    LeagueService
   ],
   bootstrap: [AppComponent]
 })

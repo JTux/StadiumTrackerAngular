@@ -1,0 +1,35 @@
+<h1>Index</h1>
+<a mat-raised-button color="primary">Create New</a>
+<hr />
+
+<div>
+  <mat-table #table [dataSource]="dataSource">
+    <mat-header-row *matHeaderRowDef="columnNames"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: columnNames;"></mat-row>
+
+    <ng-container matColumnDef="details">
+      <mat-header-cell *matHeaderCellDef></mat-header-cell>
+      <mat-cell *matCellDef="let league">
+        <i mat-icon class="material-icons">library_books</i>
+      </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="leagueID">
+      <mat-header-cell *matHeaderCellDef>League #</mat-header-cell>
+      <mat-cell *matCellDef="let league">{{league.LeagueID}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="leagueName">
+      <mat-header-cell *matHeaderCellDef>League Name</mat-header-cell>
+      <mat-cell *matCellDef="let league">{{league.LeagueName}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="buttons">
+      <mat-header-cell *matHeaderCellDef></mat-header-cell>
+      <mat-cell *matCellDef="let league">
+        <i mat-icon class="material-icons" *ngIf="league.UserIsOwner">edit</i>
+        <i mat-icon class="material-icons" *ngIf="league.UserIsOwner">delete</i>
+      </mat-cell>
+    </ng-container>
+  </mat-table>
+</div>
