@@ -1,4 +1,13 @@
-.example-fill-remaining-space {
+.nav-brand {
+    text-decoration: none;
+    color: white;
+}
+
+.nav-brand:hover {
+    color: #ccc;
+}
+
+.filler {
     flex: 1 1 auto;
 }
 
