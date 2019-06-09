@@ -40,3 +40,17 @@ mat-sidenav {
     background-color: #132584;
     color: white;
 }
+
+.site-footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 2;
+    text-align: center;
+}
+
+.site-footer a {
+    color: #555;
+    text-decoration: none;
+}

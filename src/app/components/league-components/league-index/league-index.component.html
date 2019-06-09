@@ -1,4 +1,4 @@
-<h1>Index</h1>
+<h1>Leagues</h1>
 <a mat-raised-button color="primary" routerLink="create">Create New</a>
 <hr />
 
@@ -12,11 +12,6 @@
       <mat-cell *matCellDef="let league">
         <i mat-icon class="material-icons">library_books</i>
       </mat-cell>
-    </ng-container>
-
-    <ng-container matColumnDef="leagueID">
-      <mat-header-cell *matHeaderCellDef>League #</mat-header-cell>
-      <mat-cell *matCellDef="let league">{{league.LeagueID}}</mat-cell>
     </ng-container>
 
     <ng-container matColumnDef="leagueName">

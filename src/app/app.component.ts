@@ -7,4 +7,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'StadiumTrackerAngular';
+  year = new Date().getFullYear();
 }
