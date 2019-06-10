@@ -6,6 +6,7 @@ import { LeagueIndexComponent } from './components/league-components/league-inde
 import { LeagueCreateComponent } from './components/league-components/league-create/league-create.component';
 import { LeagueDetailComponent } from './components/league-components/league-detail/league-detail.component';
 import { LeagueEditComponent } from './components/league-components/league-edit/league-edit.component';
+import { LeagueDeleteComponent } from './components/league-components/league-delete/league-delete.component';
 
 const routes: Routes = [
   { path: 'register', component: RegistrationComponent },
@@ -15,7 +16,8 @@ const routes: Routes = [
       { path: '', component: LeagueIndexComponent },
       { path: 'create', component: LeagueCreateComponent },
       { path: 'details/:id', component: LeagueDetailComponent },
-      { path: 'edit/:id', component: LeagueEditComponent }
+      { path: 'edit/:id', component: LeagueEditComponent },
+      { path: 'delete/:id', component: LeagueDeleteComponent }
     ]
   }
 ];

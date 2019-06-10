@@ -4,7 +4,7 @@
 <div *ngIf="league">
   <form (ngSubmit)="onSubmit()" [formGroup]="editLeagueForm">
     <div>
-      <div>
+      <div hidden>
         <mat-form-field>
           <input matInput placeholder="League ID" formControlName="LeagueID" required [value]="league.LeagueID" />
         </mat-form-field>
@@ -16,6 +16,7 @@
       </div>
     </div>
     <button mat-raised-button color="primary" type="submit">Save</button>
+  <button mat-raised-button routerLink="/league/details/{{league.LeagueID}}" color="accent">Back to League</button>
   </form>
 </div>
 

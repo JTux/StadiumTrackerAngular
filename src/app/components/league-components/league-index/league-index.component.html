@@ -23,7 +23,7 @@
       <mat-header-cell *matHeaderCellDef></mat-header-cell>
       <mat-cell *matCellDef="let league">
         <i mat-icon class="material-icons" *ngIf="league.UserIsOwner" routerLink="edit/{{league.LeagueID}}">edit</i>
-        <i mat-icon class="material-icons" *ngIf="league.UserIsOwner">delete</i>
+        <i mat-icon class="material-icons" *ngIf="league.UserIsOwner" routerLink="delete/{{league.LeagueID}}">delete</i>
       </mat-cell>
     </ng-container>
   </mat-table>

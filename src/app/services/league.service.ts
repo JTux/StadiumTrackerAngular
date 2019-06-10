@@ -27,6 +27,10 @@ export class LeagueService {
     return this._http.put(`${Api_Url}/league`, league, { headers: this.getHeaders() });
   }
 
+  deleteLeague(id: number) {
+    return this._http.delete(`${Api_Url}/league/${id}`, { headers: this.getHeaders() });
+  }
+
   private getHeaders() {
     return new HttpHeaders().set('Authorization', `Bearer ${localStorage.getItem('id_token')}`);
   }
