@@ -26,6 +26,7 @@ import { LeagueService } from './services/league.service';
 import { LeagueDetailComponent } from './components/league-components/league-detail/league-detail.component';
 import { LeagueEditComponent } from './components/league-components/league-edit/league-edit.component';
 import { LeagueDeleteComponent } from './components/league-components/league-delete/league-delete.component';
+import { AuthGuard } from './guards/auth.guard';
 
 @NgModule({
   declarations: [
@@ -54,6 +55,7 @@ import { LeagueDeleteComponent } from './components/league-components/league-del
     ReactiveFormsModule
   ],
   providers: [
+    AuthGuard,
     AuthService,
     LeagueService
   ],
