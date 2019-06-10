@@ -2,8 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { LeagueService } from 'src/app/services/league.service';
 import { FormBuilder, FormGroup, FormControl } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { LeagueEdit, LeagueDetail } from 'src/app/models/LeagueModels';
-import { format } from 'path';
+import { LeagueEdit } from 'src/app/models/LeagueModels';
 
 @Component({
   selector: 'app-league-edit',
