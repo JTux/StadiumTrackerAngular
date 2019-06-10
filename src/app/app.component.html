@@ -12,7 +12,7 @@
 <mat-sidenav-container class="side-nav">
     <mat-sidenav #sidenav class="navigation-menu">
         <div class="nav-btn-grp">
-            <div class="nav-route-buttons">
+            <div class="nav-route-buttons" *ngIf="_authService.showLogout">
                 <p><button mat-button class="nav-btn" routerLink="/league">Leagues</button></p>
                 <p><button mat-button class="nav-btn" routerLink="/">Teams</button></p>
                 <p><button mat-button class="nav-btn" routerLink="/">Stadiums</button></p>
@@ -21,9 +21,13 @@
                 <p><button mat-button class="nav-btn" routerLink="/">Visitors</button></p>
             </div>
         </div>
-        
+
         <div class="site-footer">
-            <div class="nav-account-buttons">
+            <div *ngIf="_authService.showLogout">
+                <p><button mat-button class="nav-btn" (click)="onLogout()">Logout</button></p>
+            </div>
+
+            <div *ngIf="!_authService.showLogout">
                 <p><button mat-button class="nav-btn" routerLink="/login">Login</button></p>
                 <p><button mat-button class="nav-btn" routerLink="/register">Register</button></p>
             </div>

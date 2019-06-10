@@ -13,6 +13,7 @@ const Api_Url = "https://localhost:44376";
 export class AuthService {
   userInfo: Token;
   isLoggedIn = new Subject<boolean>();
+  showLogout: boolean;
 
   constructor(private _http: HttpClient, private _router: Router) { }
 
@@ -27,6 +28,7 @@ export class AuthService {
     return this._http.post(`${Api_Url}/token`, str).subscribe((token: Token) => {
       this.userInfo = token;
       localStorage.setItem('id_token', token.access_token);
+      this.showLogout = true;
       this.isLoggedIn.next(true);
       this._router.navigate(['/']);
     });
@@ -35,7 +37,7 @@ export class AuthService {
   logout() {
     localStorage.clear();
     this.isLoggedIn.next(false);
-
+    this.showLogout = false;
     this._http.post(`${Api_Url}/api/Account/Logout`, { headers: this.setHeaders() });
     this._router.navigate(['/login']);
   }
