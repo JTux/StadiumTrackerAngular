@@ -12,6 +12,8 @@
 <mat-sidenav-container class="side-nav">
     <mat-sidenav #sidenav class="navigation-menu">
         <div class="nav-btn-grp">
+            <p><button mat-button class="nav-btn" routerLink="/">Home</button></p>
+            <p><button mat-button class="nav-btn" routerLink="/">About</button></p>
             <div class="nav-route-buttons" *ngIf="_authService.showLogout">
                 <p><button mat-button class="nav-btn" routerLink="/league">Leagues</button></p>
                 <p><button mat-button class="nav-btn" routerLink="/">Teams</button></p>

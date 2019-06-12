@@ -15,7 +15,11 @@ export class AuthService {
   isLoggedIn = new Subject<boolean>();
   showLogout: boolean;
 
-  constructor(private _http: HttpClient, private _router: Router) { }
+  constructor(private _http: HttpClient, private _router: Router) {
+    if (localStorage.getItem('id_token')) {
+      this.showLogout = true;
+    }
+  }
 
   register(regUserData: RegisterUser) {
     return this._http.post(`${Api_Url}/api/Account/Register`, regUserData);
