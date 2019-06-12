@@ -11,7 +11,8 @@ import {
   MatTableModule,
   MatInputModule,
   MatSidenavModule,
-  MatCheckboxModule
+  MatCheckboxModule,
+  MatSelectModule
 } from '@angular/material';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -20,14 +21,16 @@ import { RegistrationComponent } from './components/registration/registration.co
 import { LoginComponent } from './components/login/login.component';
 import { LeagueIndexComponent } from './components/league-components/league-index/league-index.component';
 import { LeagueCreateComponent } from './components/league-components/league-create/league-create.component';
-
-import { AuthService } from './services/auth.service';
-import { LeagueService } from './services/league.service';
 import { LeagueDetailComponent } from './components/league-components/league-detail/league-detail.component';
 import { LeagueEditComponent } from './components/league-components/league-edit/league-edit.component';
 import { LeagueDeleteComponent } from './components/league-components/league-delete/league-delete.component';
-import { AuthGuard } from './guards/auth.guard';
+
 import { TeamIndexComponent } from './components/team-components/team-index/team-index.component';
+import { TeamCreateComponent } from './components/team-components/team-create/team-create.component';
+
+import { AuthService } from './services/auth.service';
+import { LeagueService } from './services/league.service';
+import { AuthGuard } from './guards/auth.guard';
 
 @NgModule({
   declarations: [
@@ -39,7 +42,8 @@ import { TeamIndexComponent } from './components/team-components/team-index/team
     LeagueDetailComponent,
     LeagueEditComponent,
     LeagueDeleteComponent,
-    TeamIndexComponent
+    TeamIndexComponent,
+    TeamCreateComponent
   ],
   imports: [
     AppRoutingModule,
@@ -52,6 +56,7 @@ import { TeamIndexComponent } from './components/team-components/team-index/team
     MatFormFieldModule,
     MatInputModule,
     MatSidenavModule,
+    MatSelectModule,
     MatTableModule,
     MatToolbarModule,
     ReactiveFormsModule

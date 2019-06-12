@@ -9,6 +9,7 @@ import { LeagueDetailComponent } from './components/league-components/league-det
 import { LeagueEditComponent } from './components/league-components/league-edit/league-edit.component';
 import { LeagueDeleteComponent } from './components/league-components/league-delete/league-delete.component';
 import { TeamIndexComponent } from './components/team-components/team-index/team-index.component';
+import { TeamCreateComponent } from './components/team-components/team-create/team-create.component';
 
 const routes: Routes = [
   { path: 'register', component: RegistrationComponent },
@@ -24,7 +25,8 @@ const routes: Routes = [
   },
   {
     path: 'team', canActivate: [AuthGuard], children: [
-      { path: '', component: TeamIndexComponent }
+      { path: '', component: TeamIndexComponent },
+      { path: 'create', component: TeamCreateComponent }
     ]
   }
 ];
