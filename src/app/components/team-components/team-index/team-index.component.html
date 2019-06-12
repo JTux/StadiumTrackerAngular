@@ -1,0 +1,45 @@
+<h1>Teams</h1>
+<a mat-raised-button color="primary" routerLink="create">Create New</a>
+<hr />
+
+<div>
+  <mat-table #table [dataSource]="dataSource">
+    <mat-header-row *matHeaderRowDef="columnNames"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: columnNames;"></mat-row>
+
+    <ng-container matColumnDef="details">
+      <mat-header-cell *matHeaderCellDef></mat-header-cell>
+      <mat-cell *matCellDef="let team">
+        <i mat-icon class="material-icons" routerLink="details/{{team.TeamID}}">library_books</i>
+      </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="logo">
+      <mat-header-cell *matHeaderCellDef>Team Logo</mat-header-cell>
+      <mat-cell *matCellDef="let team">
+        <div style="width: 50px; height: 50px; border: solid 1px black;"></div>
+      </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="teamName">
+      <mat-header-cell *matHeaderCellDef>Team Name</mat-header-cell>
+      <mat-cell *matCellDef="let team">{{team.TeamName}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="leagueName">
+      <mat-header-cell *matHeaderCellDef>League Name</mat-header-cell>
+      <mat-cell *matCellDef="let team">
+        <a routerLink="/league/details/{{team.LeagueID}}">{{team.LeagueName}}</a>
+      </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="buttons">
+      <mat-header-cell *matHeaderCellDef></mat-header-cell>
+      <mat-cell *matCellDef="let team">
+        <i mat-icon class="material-icons" *ngIf="team.UserIsOwner" routerLink="edit/{{league.LeagueID}}">edit</i>
+        <i mat-icon class="material-icons" *ngIf="team.UserIsOwner" routerLink="delete/{{league.LeagueID}}">delete</i>
+      </mat-cell>
+    </ng-container>
+
+  </mat-table>
+</div>

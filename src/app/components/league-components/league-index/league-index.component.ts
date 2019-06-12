@@ -20,6 +20,4 @@ export class LeagueIndexComponent implements OnInit {
       this.dataSource = new MatTableDataSource<LeagueDetail>(leagues);
     });
   }
-
-
 }

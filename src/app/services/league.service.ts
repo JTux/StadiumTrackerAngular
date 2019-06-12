@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { LeagueCreate, LeagueEdit } from '../models/LeagueModels';
-
-const Api_Url = "https://localhost:44376/api";
+import { Api_Url } from 'src/environments/environment.prod';
 
 @Injectable({
   providedIn: 'root'
