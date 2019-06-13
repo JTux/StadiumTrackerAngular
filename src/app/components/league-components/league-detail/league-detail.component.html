@@ -1,16 +1,46 @@
-<h1>League Details</h1>
 <div *ngIf="league">
   <div>
-    <label for="">League ID: </label>
-    <span>{{ league.LeagueID }}</span>
+    <h1>{{league.LeagueName}} League Details</h1>
   </div>
-  <div>
-    <label for="">League Name: </label>
-    <span>{{ league.LeagueName }}</span>
-  </div>
-  
-  <button mat-raised-button routerLink="/league/edit/{{league.LeagueID}}" color="accent" *ngIf="league.UserIsOwner">Edit</button>
-  <button mat-raised-button routerLink="/league/delete/{{league.LeagueID}}" color="warn" *ngIf="league.UserIsOwner">Delete</button>
-</div>
+  <button mat-raised-button routerLink="/league" color="primary">Back to List</button>
+  <button mat-raised-button routerLink="/league/edit/{{league.LeagueID}}" color="accent"
+    *ngIf="league.UserIsOwner">Edit</button>
+  <button mat-raised-button routerLink="/league/delete/{{league.LeagueID}}" color="warn"
+    *ngIf="league.UserIsOwner">Delete</button>
 
-<button mat-raised-button routerLink="/league" color="primary">Back to List</button>
+  <div>Member Teams</div>
+  <div>
+    <mat-table #table [dataSource]="league.MemberTeams">
+      <mat-header-row *matHeaderRowDef="columnNames"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: columnNames;"></mat-row>
+
+      <ng-container matColumnDef="details">
+        <mat-header-cell *matHeaderCellDef></mat-header-cell>
+        <mat-cell *matCellDef="let team">
+          <i mat-icon class="material-icons" routerLink="/team/details/{{team.TeamID}}">library_books</i>
+        </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="logo">
+        <mat-header-cell *matHeaderCellDef>Team Logo</mat-header-cell>
+        <mat-cell *matCellDef="let team">
+          <div style="width: 50px; height: 50px; border: solid 1px black;"></div>
+        </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="teamName">
+        <mat-header-cell *matHeaderCellDef>Team Name</mat-header-cell>
+        <mat-cell *matCellDef="let team">{{team.TeamName}}</mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="buttons">
+        <mat-header-cell *matHeaderCellDef></mat-header-cell>
+        <mat-cell *matCellDef="let team">
+          <i mat-icon class="material-icons" *ngIf="team.UserIsOwner" routerLink="/team/edit/{{team.TeamID}}">edit</i>
+          <i mat-icon class="material-icons" *ngIf="team.UserIsOwner"
+            routerLink="/team/delete/{{team.TeamID}}">delete</i>
+        </mat-cell>
+      </ng-container>
+
+    </mat-table>
+  </div>

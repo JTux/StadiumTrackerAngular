@@ -5,12 +5,14 @@
     <span>{{team.TeamName}}</span>
   </div>
   <div>
-    <label for="">League: </label>
-    <span>{{team.LeagueName}}</span>
+    <a routerLink="/league/details/{{team.LeagueID}}">
+      <label for="">League: </label>
+      <span>{{team.LeagueName}}</span>
+    </a>
   </div>
   
-  <button mat-raised-button routerLink="/league/edit/{{team.TeamID}}" color="accent" *ngIf="team.UserIsOwner">Edit</button>
-  <button mat-raised-button routerLink="/league/delete/{{team.TeamID}}" color="warn" *ngIf="team.UserIsOwner">Delete</button>
+  <button mat-raised-button routerLink="/team/edit/{{team.TeamID}}" color="accent" *ngIf="team.UserIsOwner">Edit</button>
+  <button mat-raised-button routerLink="/team/delete/{{team.TeamID}}" color="warn" *ngIf="team.UserIsOwner">Delete</button>
 </div>
 
 <button mat-raised-button routerLink="/team" color="primary">Back to List</button>

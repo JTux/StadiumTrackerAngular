@@ -6,6 +6,7 @@ export interface LeagueDetail {
     LeagueID: number;
     LeagueName: string;
     UserIsOwner: boolean;
+    MemberTeams: LeagueDetail[];
 }
 
 export interface LeagueEdit {

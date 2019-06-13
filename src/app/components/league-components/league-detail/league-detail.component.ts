@@ -11,6 +11,7 @@ import { LeagueService } from 'src/app/services/league.service';
 export class LeagueDetailComponent implements OnInit {
 
   league: LeagueDetail;
+  columnNames = ['details', 'logo', 'teamName', 'buttons'];
 
   constructor(private _activatedRoute: ActivatedRoute, private _leagueService: LeagueService) { }
 
