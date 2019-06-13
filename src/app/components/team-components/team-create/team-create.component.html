@@ -9,9 +9,6 @@
       </mat-form-field>
     </div>
     <div>
-      <!-- <mat-form-field>
-        <input matInput placeholder="League" formControlName="LeagueID" required />
-      </mat-form-field> -->
       <mat-form-field>
         <mat-select placeholder="League Name" formControlName="LeagueID" required>
           <mat-option *ngFor="let league of leagues" [value]="league.LeagueID">
@@ -24,4 +21,4 @@
   <button mat-raised-button color="primary" type="submit">Create Team</button>
 </form>
 
-<a mat-button routerLink="/team">Back to League Index</a>
+<a mat-button routerLink="/team">Back to Team Index</a>

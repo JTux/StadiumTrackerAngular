@@ -15,7 +15,12 @@ export class TeamCreateComponent implements OnInit {
   teamForm: FormGroup;
   leagues: LeagueDetail[];
 
-  constructor(private _teamService: TeamService, private _leagueService: LeagueService, private _form: FormBuilder, private _router: Router) {
+  constructor(
+    private _teamService: TeamService, 
+    private _leagueService: LeagueService, 
+    private _form: FormBuilder, 
+    private _router: Router) {
+      
     this.createForm();
   }
 

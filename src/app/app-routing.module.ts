@@ -11,6 +11,8 @@ import { LeagueDeleteComponent } from './components/league-components/league-del
 import { TeamIndexComponent } from './components/team-components/team-index/team-index.component';
 import { TeamCreateComponent } from './components/team-components/team-create/team-create.component';
 import { TeamDetailComponent } from './components/team-components/team-detail/team-detail.component';
+import { TeamEditComponent } from './components/team-components/team-edit/team-edit.component';
+import { TeamDeleteComponent } from './components/team-components/team-delete/team-delete.component';
 
 const routes: Routes = [
   { path: 'register', component: RegistrationComponent },
@@ -28,7 +30,9 @@ const routes: Routes = [
     path: 'team', canActivate: [AuthGuard], children: [
       { path: '', component: TeamIndexComponent },
       { path: 'create', component: TeamCreateComponent },
-      { path: 'details/:id', component: TeamDetailComponent }
+      { path: 'details/:id', component: TeamDetailComponent },
+      { path: 'edit/:id', component: TeamEditComponent },
+      { path: 'delete/:id', component: TeamDeleteComponent }
     ]
   }
 ];

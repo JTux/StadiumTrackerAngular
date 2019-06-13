@@ -23,11 +23,11 @@ export class TeamService {
   }
 
   updateTeam(team: TeamEdit) {
-    return this._http.put(`${Api_Url}/team`, { headers: this.getHeaders() });
+    return this._http.put(`${Api_Url}/team`, team, { headers: this.getHeaders() });
   }
 
-  deleteTeam(id: string) {
-    return this._http.delete(`${Api_Url}/team`, { headers: this.getHeaders() });
+  deleteTeam(id: number) {
+    return this._http.delete(`${Api_Url}/team/${id}`, { headers: this.getHeaders() });
   }
 
   private getHeaders() {

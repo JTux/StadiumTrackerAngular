@@ -36,8 +36,8 @@
     <ng-container matColumnDef="buttons">
       <mat-header-cell *matHeaderCellDef></mat-header-cell>
       <mat-cell *matCellDef="let team">
-        <i mat-icon class="material-icons" *ngIf="team.UserIsOwner" routerLink="edit/{{team.LeagueID}}">edit</i>
-        <i mat-icon class="material-icons" *ngIf="team.UserIsOwner" routerLink="delete/{{team.LeagueID}}">delete</i>
+        <i mat-icon class="material-icons" *ngIf="team.UserIsOwner" routerLink="edit/{{team.TeamID}}">edit</i>
+        <i mat-icon class="material-icons" *ngIf="team.UserIsOwner" routerLink="delete/{{team.TeamID}}">delete</i>
       </mat-cell>
     </ng-container>
 
