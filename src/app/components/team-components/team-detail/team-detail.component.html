@@ -1,0 +1,16 @@
+<h1>Team Details</h1>
+<div *ngIf="team">
+  <div>
+    <label for="">Team Name: </label>
+    <span>{{team.TeamName}}</span>
+  </div>
+  <div>
+    <label for="">League: </label>
+    <span>{{team.LeagueName}}</span>
+  </div>
+  
+  <button mat-raised-button routerLink="/league/edit/{{team.TeamID}}" color="accent" *ngIf="team.UserIsOwner">Edit</button>
+  <button mat-raised-button routerLink="/league/delete/{{team.TeamID}}" color="warn" *ngIf="team.UserIsOwner">Delete</button>
+</div>
+
+<button mat-raised-button routerLink="/team" color="primary">Back to List</button>

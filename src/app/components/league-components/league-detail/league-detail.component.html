@@ -10,7 +10,7 @@
   </div>
   
   <button mat-raised-button routerLink="/league/edit/{{league.LeagueID}}" color="accent" *ngIf="league.UserIsOwner">Edit</button>
-  <button mat-raised-button routerLink="/league/delete/{{league.LeagueID}}" color="warn">Delete</button>
+  <button mat-raised-button routerLink="/league/delete/{{league.LeagueID}}" color="warn" *ngIf="league.UserIsOwner">Delete</button>
 </div>
 
 <button mat-raised-button routerLink="/league" color="primary">Back to List</button>
