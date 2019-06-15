@@ -10,7 +10,7 @@ import { TeamService } from 'src/app/services/team.service';
 })
 export class TeamIndexComponent implements OnInit {
 
-  columnNames = ['details', 'logo', 'teamName', 'leagueName', 'buttons'];
+  columnNames = ['logo', 'teamName', 'leagueName', 'buttons'];
   dataSource: MatTableDataSource<TeamDetail>;
 
   constructor(private _teamService: TeamService) { }

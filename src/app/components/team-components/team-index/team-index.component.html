@@ -7,17 +7,11 @@
     <mat-header-row *matHeaderRowDef="columnNames"></mat-header-row>
     <mat-row *matRowDef="let row; columns: columnNames;"></mat-row>
 
-    <ng-container matColumnDef="details">
-      <mat-header-cell *matHeaderCellDef></mat-header-cell>
-      <mat-cell *matCellDef="let team">
-        <i mat-icon class="material-icons" routerLink="details/{{team.TeamID}}">library_books</i>
-      </mat-cell>
-    </ng-container>
-
     <ng-container matColumnDef="logo">
       <mat-header-cell *matHeaderCellDef>Team Logo</mat-header-cell>
       <mat-cell *matCellDef="let team">
-        <div class="img-preview" [attr.src]="(team.ImageData)" [ngStyle]="{'background-image': 'url('+ team.ImageData +')'}">
+        <div class="img-preview" routerLink="details/{{team.TeamID}}" style="cursor: pointer;"
+          [ngStyle]="{'background-image': 'url('+ team.ImageData +')'}">
         </div>
       </mat-cell>
     </ng-container>

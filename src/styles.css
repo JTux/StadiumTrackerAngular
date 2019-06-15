@@ -12,3 +12,13 @@ body {
 .mat-row:nth-child(odd) {
     background-color: white;
 }
+.img-preview {
+	background: center center no-repeat;
+	background-size: contain;
+	height: 116px;
+	width: 116px;
+}
+
+.mat-cell div {
+    margin: auto;
+}

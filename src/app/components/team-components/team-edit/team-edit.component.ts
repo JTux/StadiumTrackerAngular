@@ -39,7 +39,8 @@ export class TeamEditComponent implements OnInit {
     this.teamForm = this._form.group({
       TeamID: new FormControl(this.team.TeamID),
       TeamName: new FormControl(this.team.TeamName),
-      LeagueID: new FormControl(this.team.LeagueID)
+      LeagueID: new FormControl(this.team.LeagueID),
+      ImageData: new FormControl(this.team.ImageData)
     });
     this._leagueService.getLeagues().subscribe((leagues: LeagueDetail[]) => {
       this.leagues = leagues
@@ -50,7 +51,8 @@ export class TeamEditComponent implements OnInit {
     const updatedTeam: TeamEdit = {
       LeagueID: this.teamForm.value.LeagueID,
       TeamID: this.teamForm.value.TeamID,
-      TeamName: this.teamForm.value.TeamName
+      TeamName: this.teamForm.value.TeamName,
+      ImageData: this.teamForm.value.ImageData
     };
     this._teamService.updateTeam(updatedTeam).subscribe(d => {
       this._router.navigate(['/team']);
