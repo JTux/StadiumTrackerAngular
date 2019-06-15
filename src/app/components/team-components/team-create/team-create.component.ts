@@ -55,6 +55,8 @@ export class TeamCreateComponent implements OnInit {
   }
 
   onSubmit() {
+    this.teamForm.controls['ImageData'].setValue(this.selectedFile.src);
+
     this._teamService.createTeam(this.teamForm.value).subscribe(data => {
       this._router.navigate(['/team']);
     });
