@@ -5,6 +5,10 @@ import { Router } from '@angular/router';
 import { LeagueDetail } from 'src/app/models/LeagueModels';
 import { LeagueService } from 'src/app/services/league.service';
 
+class ImageSnippet {
+  constructor(public src: string, public file: File) { }
+}
+
 @Component({
   selector: 'app-team-create',
   templateUrl: './team-create.component.html',
@@ -14,6 +18,7 @@ export class TeamCreateComponent implements OnInit {
 
   teamForm: FormGroup;
   leagues: LeagueDetail[];
+  selectedFile: ImageSnippet;
 
   constructor(
     private _teamService: TeamService, 
@@ -30,11 +35,23 @@ export class TeamCreateComponent implements OnInit {
   createForm() {
     this.teamForm = this._form.group({
       TeamName: new FormControl,
-      LeagueID: new FormControl
+      LeagueID: new FormControl,
+      ImageData: new FormControl
     });
     this._leagueService.getLeagues().subscribe((leagues: LeagueDetail[]) => { 
       this.leagues = leagues
     });
+  }
+
+  processFile(imageInput: any) {
+    const file: File = imageInput.files[0];
+    const reader = new FileReader();
+
+    reader.addEventListener('load', (event: any) => {
+      this.selectedFile = new ImageSnippet(event.target.result, file);
+    });
+
+    reader.readAsDataURL(file);
   }
 
   onSubmit() {
