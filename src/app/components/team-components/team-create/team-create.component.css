@@ -1,13 +1,13 @@
-input {
-	display: none;
-}
-
 .image-upload-container {
 	cursor: pointer;
 	padding: .5em 1em;
 	margin: 2em;
 	background-color: red;
 	border-radius: 5px;
+}
+
+.image-upload-container input {
+	display: none;
 }
 
 .img-preview-container {
