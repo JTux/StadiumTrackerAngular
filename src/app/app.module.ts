@@ -19,6 +19,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { RegistrationComponent } from './components/registration/registration.component';
 import { LoginComponent } from './components/login/login.component';
+
 import { LeagueIndexComponent } from './components/league-components/league-index/league-index.component';
 import { LeagueCreateComponent } from './components/league-components/league-create/league-create.component';
 import { LeagueDetailComponent } from './components/league-components/league-detail/league-detail.component';
@@ -27,14 +28,16 @@ import { LeagueDeleteComponent } from './components/league-components/league-del
 
 import { TeamIndexComponent } from './components/team-components/team-index/team-index.component';
 import { TeamCreateComponent } from './components/team-components/team-create/team-create.component';
-
-import { AuthService } from './services/auth.service';
-import { LeagueService } from './services/league.service';
-import { AuthGuard } from './guards/auth.guard';
 import { TeamDetailComponent } from './components/team-components/team-detail/team-detail.component';
 import { TeamEditComponent } from './components/team-components/team-edit/team-edit.component';
 import { TeamDeleteComponent } from './components/team-components/team-delete/team-delete.component';
+
 import { StadiumIndexComponent } from './components/stadium-components/stadium-index/stadium-index.component';
+
+import { AuthService } from './services/auth.service';
+import { LeagueService } from './services/league.service';
+import { TeamService } from './services/team.service';
+import { AuthGuard } from './guards/auth.guard';
 
 @NgModule({
   declarations: [
@@ -72,7 +75,8 @@ import { StadiumIndexComponent } from './components/stadium-components/stadium-i
   providers: [
     AuthGuard,
     AuthService,
-    LeagueService
+    LeagueService,
+    TeamService
   ],
   bootstrap: [AppComponent]
 })

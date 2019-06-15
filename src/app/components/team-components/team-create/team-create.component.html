@@ -17,6 +17,17 @@
         </mat-select>
       </mat-form-field>
     </div>
+
+    <div>
+        <label class="image-upload-container">
+          <span>Select Image</span>
+          <input #imageInput type="file" accept="image/*" (change)="processFile(imageInput)" required/>
+        </label>
+        <div *ngIf="selectedFile" class="img-preview-container">
+          <div class="img-preview" [ngStyle]="{'background-image': 'url('+ selectedFile.src +')'}">
+          </div>
+        </div>
+      </div>
   </div>
   <button mat-raised-button color="primary" type="submit">Create Team</button>
 </form>
