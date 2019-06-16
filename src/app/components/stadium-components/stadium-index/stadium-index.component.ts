@@ -10,7 +10,7 @@ import { StadiumService } from 'src/app/services/stadium.service';
 })
 export class StadiumIndexComponent implements OnInit {
 
-  columnNames = ['details', 'stadiumName', 'cityName', 'buttons'];
+  columnNames = ['details', 'stadiumName', 'cityName', 'stateName', 'buttons'];
   dataSource: MatTableDataSource<StadiumDetail>;
 
   constructor(private _stadiumService: StadiumService) { }

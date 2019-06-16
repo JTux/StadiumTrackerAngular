@@ -28,6 +28,6 @@ export class LeagueCreateComponent implements OnInit {
   onSubmit() {
     this._leagueService.createLeague(this.leagueForm.value).subscribe(data => {
       this._router.navigate(['/league']);
-    })
+    });
   }
 }

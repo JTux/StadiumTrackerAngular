@@ -38,6 +38,7 @@ import { AuthService } from './services/auth.service';
 import { LeagueService } from './services/league.service';
 import { TeamService } from './services/team.service';
 import { AuthGuard } from './guards/auth.guard';
+import { StadiumCreateComponent } from './components/stadium-components/stadium-create/stadium-create.component';
 
 @NgModule({
   declarations: [
@@ -54,7 +55,8 @@ import { AuthGuard } from './guards/auth.guard';
     TeamDetailComponent,
     TeamEditComponent,
     TeamDeleteComponent,
-    StadiumIndexComponent
+    StadiumIndexComponent,
+    StadiumCreateComponent
   ],
   imports: [
     AppRoutingModule,

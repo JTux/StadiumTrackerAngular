@@ -24,10 +24,17 @@
       <mat-cell *matCellDef="let stadium">{{stadium.CityName}}</mat-cell>
     </ng-container>
     
-    <ng-container matColumnDef="buttons">
+    <ng-container matColumnDef="stateName">
       <mat-header-cell *matHeaderCellDef>State Name</mat-header-cell>
       <mat-cell *matCellDef="let stadium">{{stadium.StateName}}</mat-cell>
     </ng-container>
 
+    <ng-container matColumnDef="buttons">
+      <mat-header-cell *matHeaderCellDef></mat-header-cell>
+        <mat-cell *matCellDef="let stadium">
+          <i mat-icon class="material-icons" *ngIf="stadium.UserIsOwner" routerLink="edit/{{stadium.StadiumID}}">edit</i>
+          <i mat-icon class="material-icons" *ngIf="stadium.UserIsOwner" routerLink="delete/{{stadium.StadiumID}}">delete</i>
+        </mat-cell>
+    </ng-container>
   </mat-table>
 </div>

@@ -1,0 +1,23 @@
+<h1>Create new Stadium</h1>
+<hr />
+
+<form (ngSubmit)="onSubmit()" [formGroup]="stadiumForm">
+  <div>
+    <div>
+      <mat-form-field>
+        <input matInput placeholder="Stadium Name" formControlName="StadiumName" required />
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field>
+        <input matInput placeholder="City Name" formControlName="CityName" required />
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field>
+        <input matInput placeholder="State Name" formControlName="StateName" required />
+      </mat-form-field>
+    </div>
+  </div>
+  <button mat-raised-button color="primary" type="submit">Create Stadium</button>
+</form>
