@@ -1,8 +1,9 @@
 .image-upload-container {
 	cursor: pointer;
 	padding: .5em 1em;
-	margin: 2em;
-	background-color: red;
+	background-color: #3f51b5;
+	color: #fff;
+	font-weight: 400;
 	border-radius: 5px;
 }
 
@@ -15,4 +16,6 @@
 	position: relative;
 	height: 116px;
 	width: 116px;
+	text-align: center;
+	margin: 1em auto;
 }

@@ -1,4 +1,5 @@
 @import "../node_modules/@angular/material/prebuilt-themes//indigo-pink.css";
+
 body {
     margin: 0;
     padding: 0;
@@ -6,17 +7,21 @@ body {
 }
 
 .mat-row:nth-child(even) {
-    background-color: #eee;
+    background-color: #ccc;
 }
 
 .mat-row:nth-child(odd) {
     background-color: white;
 }
+
 .img-preview {
 	background: center center no-repeat;
 	background-size: contain;
 	height: 116px;
-	width: 116px;
+    width: 116px;
+    background-color: white;
+    border: solid 1px black;
+    border-radius: 10px;
 }
 
 .mat-cell div {
