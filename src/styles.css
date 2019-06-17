@@ -7,7 +7,7 @@ body {
 }
 
 .mat-row:nth-child(even) {
-    background-color: #ccc;
+    background-color: #e5e5e5;
 }
 
 .mat-row:nth-child(odd) {
@@ -21,9 +21,8 @@ body {
     width: 116px;
     background-color: white;
     border: solid 1px black;
-    border-radius: 10px;
 }
 
 .mat-cell div {
-    margin: auto;
+    margin: 1.5em auto;
 }

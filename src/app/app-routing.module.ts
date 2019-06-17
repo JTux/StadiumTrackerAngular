@@ -15,6 +15,7 @@ import { TeamEditComponent } from './components/team-components/team-edit/team-e
 import { TeamDeleteComponent } from './components/team-components/team-delete/team-delete.component';
 import { StadiumIndexComponent } from './components/stadium-components/stadium-index/stadium-index.component';
 import { StadiumCreateComponent } from './components/stadium-components/stadium-create/stadium-create.component';
+import { StadiumDetailComponent } from './components/stadium-components/stadium-detail/stadium-detail.component';
 
 const routes: Routes = [
   { path: 'register', component: RegistrationComponent },
@@ -40,7 +41,8 @@ const routes: Routes = [
   {
     path: 'stadium', canActivate: [AuthGuard], children: [
       { path: '', component: StadiumIndexComponent },
-      { path: 'create', component: StadiumCreateComponent }
+      { path: 'create', component: StadiumCreateComponent },
+      { path: 'details/:id', component: StadiumDetailComponent }
     ]
   }
 ];

@@ -1,0 +1,12 @@
+<div *ngIf="stadium">
+  <h1>{{stadium.StadiumName}}</h1>
+  <div>
+    <label>Location: </label>
+    <span>{{stadium.CityName}}, {{stadium.StateName}}</span>
+  </div>
+  <button mat-raised-button routerLink="/stadium/edit/{{stadium.StadiumID}}" color="accent"
+    *ngIf="stadium.UserIsOwner">Edit</button>
+  <button mat-raised-button routerLink="/stadium/delete/{{stadium.StadiumID}}" color="warn"
+    *ngIf="stadium.UserIsOwner">Delete</button>
+</div>
+<button mat-raised-button color="primary" routerLink="/stadium">Back to Stadium List</button>

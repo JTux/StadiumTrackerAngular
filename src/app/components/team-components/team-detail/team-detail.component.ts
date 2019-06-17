@@ -15,8 +15,8 @@ export class TeamDetailComponent implements OnInit {
   constructor(private _activatedRoute: ActivatedRoute, private _teamService: TeamService) { }
 
   ngOnInit() {
-    this._activatedRoute.paramMap.subscribe(routeData=>{
-      this._teamService.getTeamByID(routeData.get('id')).subscribe((singleTeam: TeamDetail)=>{
+    this._activatedRoute.paramMap.subscribe(routeData => {
+      this._teamService.getTeamByID(routeData.get('id')).subscribe((singleTeam: TeamDetail) => {
         this.team = singleTeam
       });
     });
