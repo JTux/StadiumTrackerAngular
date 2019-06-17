@@ -41,6 +41,8 @@ import { TeamService } from './services/team.service';
 import { AuthGuard } from './guards/auth.guard';
 import { StadiumCreateComponent } from './components/stadium-components/stadium-create/stadium-create.component';
 import { StadiumDetailComponent } from './components/stadium-components/stadium-detail/stadium-detail.component';
+import { StadiumEditComponent } from './components/stadium-components/stadium-edit/stadium-edit.component';
+import { StadiumDeleteComponent } from './components/stadium-components/stadium-delete/stadium-delete.component';
 
 @NgModule({
   declarations: [
@@ -59,7 +61,9 @@ import { StadiumDetailComponent } from './components/stadium-components/stadium-
     TeamDeleteComponent,
     StadiumIndexComponent,
     StadiumCreateComponent,
-    StadiumDetailComponent
+    StadiumDetailComponent,
+    StadiumEditComponent,
+    StadiumDeleteComponent
   ],
   imports: [
     AppRoutingModule,

@@ -1,0 +1,12 @@
+<div *ngIf="stadium">
+  <h1>{{stadium.StadiumName}}</h1>
+  <div>
+
+    <label for="Location">Location: </label>
+    <span>{{stadium.CityName}}, {{stadium.StateName}}</span>
+  </div>
+
+  <button mat-raised-button (click)="onDelete()" color="warn" *ngIf="stadium.UserIsOwner">Delete</button>
+  <button mat-raised-button routerLink="/stadium/details/{{stadium.StadiumID}}" color="primary">View Details</button>
+</div>
+<a mat-button routerLink="/stadium">Back to Stadium List</a>

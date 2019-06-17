@@ -1,0 +1,35 @@
+<h1>Edit Stadium</h1>
+
+<div *ngIf="stadium">
+  <form (ngSubmit)="onSubmit()" [formGroup]="stadiumForm">
+    <div>
+      <div hidden>
+        <mat-form-field>
+          <input matInput placeholder="Stadium ID" formControlName="StadiumID" required
+            [value]="stadium.StadiumID">
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field>
+          <input matInput placeholder="Stadium Name" formControlName="StadiumName" required
+            [value]="stadium.StadiumName">
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field>
+          <input matInput placeholder="City Name" formControlName="CityName" required
+            [value]="stadium.CityName">
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field>
+          <input matInput placeholder="Stadium Name" formControlName="StateName" required
+            [value]="stadium.StateName">
+        </mat-form-field>
+      </div>
+    </div>
+    <button mat-raised-button color="primary" type="submit">Update Stadium</button>
+  </form>
+</div>
+
+<a mat-button routerLink="/stadium">Back to Stadium Index</a>

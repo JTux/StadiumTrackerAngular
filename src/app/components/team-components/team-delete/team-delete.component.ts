@@ -23,8 +23,8 @@ export class TeamDeleteComponent implements OnInit {
   ngOnInit() {
   }
 
-  onDelete(){
-    this._teamService.deleteTeam(this.team.TeamID).subscribe(()=>{
+  onDelete() {
+    this._teamService.deleteTeam(this.team.TeamID).subscribe(() => {
       this._router.navigate(['/team']);
     });
   }
