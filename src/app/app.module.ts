@@ -12,7 +12,8 @@ import {
   MatInputModule,
   MatSidenavModule,
   MatCheckboxModule,
-  MatSelectModule
+  MatSelectModule,
+  MatSortModule
 } from '@angular/material';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -72,6 +73,7 @@ import { StadiumDetailComponent } from './components/stadium-components/stadium-
     MatInputModule,
     MatSidenavModule,
     MatSelectModule,
+    MatSortModule,
     MatTableModule,
     MatToolbarModule,
     ReactiveFormsModule

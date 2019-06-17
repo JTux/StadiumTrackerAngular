@@ -3,9 +3,9 @@
 <hr />
 
 <div>
-  <mat-table #table [dataSource]="dataSource">
+  <mat-table #table matSort [dataSource]="dataSource">
     <mat-header-row *matHeaderRowDef="columnNames"></mat-header-row>
-    <mat-row *matRowDef="let row; columns: columnNames;"></mat-row>
+    <mat-row *matRowDef="let row; columns: columnNames;" ></mat-row>
 
     <ng-container matColumnDef="details">
       <mat-header-cell *matHeaderCellDef></mat-header-cell>
@@ -14,18 +14,18 @@
       </mat-cell>
     </ng-container>
 
-    <ng-container matColumnDef="stadiumName">
-      <mat-header-cell *matHeaderCellDef>Stadium Name</mat-header-cell>
+    <ng-container matColumnDef="StadiumName">
+      <mat-header-cell mat-sort-header *matHeaderCellDef>Stadium Name</mat-header-cell>
       <mat-cell *matCellDef="let stadium">{{stadium.StadiumName}}</mat-cell>
     </ng-container>
 
-    <ng-container matColumnDef="cityName">
-      <mat-header-cell *matHeaderCellDef>City Name</mat-header-cell>
+    <ng-container matColumnDef="CityName">
+      <mat-header-cell mat-sort-header *matHeaderCellDef>City Name</mat-header-cell>
       <mat-cell *matCellDef="let stadium">{{stadium.CityName}}</mat-cell>
     </ng-container>
     
-    <ng-container matColumnDef="stateName">
-      <mat-header-cell *matHeaderCellDef>State Name</mat-header-cell>
+    <ng-container matColumnDef="StateName">
+      <mat-header-cell mat-sort-header *matHeaderCellDef>State Name</mat-header-cell>
       <mat-cell *matCellDef="let stadium">{{stadium.StateName}}</mat-cell>
     </ng-container>
 

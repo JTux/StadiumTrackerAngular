@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { MatTableDataSource } from '@angular/material';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { MatTableDataSource, MatSort } from '@angular/material';
 import { TeamDetail } from 'src/app/models/TeamModels';
 import { TeamService } from 'src/app/services/team.service';
 
@@ -10,14 +10,17 @@ import { TeamService } from 'src/app/services/team.service';
 })
 export class TeamIndexComponent implements OnInit {
 
-  columnNames = ['logo', 'teamName', 'leagueName', 'buttons'];
+  columnNames = ['logo', 'TeamName', 'LeagueName', 'buttons'];
   dataSource: MatTableDataSource<TeamDetail>;
 
   constructor(private _teamService: TeamService) { }
 
+  @ViewChild(MatSort, { static: true }) sort: MatSort;
+
   ngOnInit() {
     this._teamService.getTeams().subscribe((teams: TeamDetail[]) => {
       this.dataSource = new MatTableDataSource<TeamDetail>(teams);
+      this.dataSource.sort = this.sort;
     });
   }
 }
