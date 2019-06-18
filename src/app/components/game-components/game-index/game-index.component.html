@@ -1,0 +1,49 @@
+<h1>Games</h1>
+<a mat-raised-button color="primary" routerLink="create">Create New</a>
+<hr />
+
+<div>
+  <mat-table #table matSort [dataSource]="dataSource">
+    <mat-header-row *matHeaderRowDef="columnNames"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: columnNames;"></mat-row>
+
+    <ng-container matColumnDef="details">
+      <mat-header-cell *matHeaderCellDef></mat-header-cell>
+      <mat-cell *matCellDef="let game">
+        <i mat-icon class="material-icons" routerLink="details/{{game.GameID}}">library_books</i>
+      </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="StadiumName">
+      <mat-header-cell mat-sort-header *matHeaderCellDef>Stadium Name</mat-header-cell>
+      <mat-cell *matCellDef="let game">{{game.StadiumName}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="HomeTeamName">
+      <mat-header-cell mat-sort-header *matHeaderCellDef>Home Team</mat-header-cell>
+      <mat-cell *matCellDef="let game">{{game.HomeTeamName}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="AwayTeamName">
+      <mat-header-cell mat-sort-header *matHeaderCellDef>Away Team</mat-header-cell>
+      <mat-cell *matCellDef="let game">{{game.AwayTeamName}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="HomeTeamWon">
+      <mat-header-cell mat-sort-header *matHeaderCellDef>Home Team Won</mat-header-cell>
+      <mat-cell *matCellDef="let game">{{game.HomeTeamWon}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="DateOfGame">
+      <mat-header-cell mat-sort-header *matHeaderCellDef>Date of Game</mat-header-cell>
+      <mat-cell *matCellDef="let game">{{game.DateOfGame}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="buttons">
+      <mat-header-cell *matHeaderCellDef></mat-header-cell>
+      <mat-cell *matCellDef="let game">
+        <i mat-icon class="material-icons" routerLink="details/{{game.GameID}}">library_books</i>
+      </mat-cell>
+    </ng-container>
+  </mat-table>
+</div>

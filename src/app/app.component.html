@@ -12,15 +12,31 @@
 <mat-sidenav-container class="side-nav">
     <mat-sidenav #sidenav class="navigation-menu">
         <div class="nav-btn-grp">
-            <p><button mat-button class="nav-btn" routerLink="/">Home</button></p>
-            <p><button mat-button class="nav-btn" routerLink="/">About</button></p>
+            <p><button mat-button class="nav-btn" routerLink="/">
+                    <i class="material-icons">home</i>Home
+                </button></p>
+            <p><button mat-button class="nav-btn" routerLink="/">
+                    <i class="material-icons">info</i>About
+                </button></p>
             <div class="nav-route-buttons" *ngIf="_authService.showLogout">
-                <p><button mat-button class="nav-btn" routerLink="/league">Leagues</button></p>
-                <p><button mat-button class="nav-btn" routerLink="/team">Teams</button></p>
-                <p><button mat-button class="nav-btn" routerLink="/stadium">Stadiums</button></p>
-                <p><button mat-button class="nav-btn" routerLink="/">Games</button></p>
-                <p><button mat-button class="nav-btn" routerLink="/">Visitors</button></p>
-                <p><button mat-button class="nav-btn" routerLink="/">Stats</button></p>
+                <p><button mat-button class="nav-btn" routerLink="/league">
+                        <i class="material-icons">format_list_bulleted</i>Leagues
+                    </button></p>
+                <p><button mat-button class="nav-btn" routerLink="/team">
+                        <i class="material-icons">people</i>Teams
+                    </button></p>
+                <p><button mat-button class="nav-btn" routerLink="/stadium">
+                        <i class="material-icons">location_on</i>Stadiums
+                    </button></p>
+                <p><button mat-button class="nav-btn" routerLink="/game">
+                        <i class="material-icons">signal_wifi_4_bar</i>Games
+                    </button></p>
+                <p><button mat-button class="nav-btn" routerLink="/">
+                        <i class="material-icons">person</i>Visitors
+                    </button></p>
+                <p><button mat-button class="nav-btn" routerLink="/">
+                        <i class="material-icons">insert_chart</i>Stats
+                    </button></p>
             </div>
         </div>
 

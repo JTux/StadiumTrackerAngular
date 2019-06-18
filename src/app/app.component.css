@@ -21,7 +21,7 @@
 }
 
 mat-sidenav {
-    width: 13em;
+    width: 15em;
 }
 
 .nav-btn-grp {
@@ -38,6 +38,12 @@ mat-sidenav {
     width: 90%;
     background-color: #132584;
     color: white;
+}
+
+.nav-btn i {
+    position: absolute;
+    left: 7px;
+    top: 6px;
 }
 
 .site-footer {

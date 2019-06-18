@@ -12,7 +12,6 @@ export class StadiumIndexComponent implements OnInit {
 
   columnNames = ['details', 'StadiumName', 'CityName', 'StateName', 'buttons'];
   dataSource: MatTableDataSource<StadiumDetail>;
-  stadiums: StadiumDetail[];
 
   constructor(private _stadiumService: StadiumService) { }
 
