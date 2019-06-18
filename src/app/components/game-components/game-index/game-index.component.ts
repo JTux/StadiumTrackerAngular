@@ -10,7 +10,7 @@ import { GameService } from 'src/app/services/game.service';
 })
 export class GameIndexComponent implements OnInit {
 
-  columnNames = ['details', 'DateOfGame', 'StadiumName', 'HomeTeamName', 'AwayTeamName', 'HomeTeamWon', 'buttons'];
+  columnNames = ['details', 'DateOfGame', 'StadiumName', 'HomeTeamName', 'AwayTeamName', 'buttons'];
   dataSource: MatTableDataSource<GameListItem>;
 
   constructor(private _gameService: GameService) { }

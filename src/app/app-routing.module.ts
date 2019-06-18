@@ -19,6 +19,7 @@ import { StadiumDetailComponent } from './components/stadium-components/stadium-
 import { StadiumEditComponent } from './components/stadium-components/stadium-edit/stadium-edit.component';
 import { StadiumDeleteComponent } from './components/stadium-components/stadium-delete/stadium-delete.component';
 import { GameIndexComponent } from './components/game-components/game-index/game-index.component';
+import { GameCreateComponent } from './components/game-components/game-create/game-create.component';
 
 const routes: Routes = [
   { path: 'register', component: RegistrationComponent },
@@ -52,7 +53,8 @@ const routes: Routes = [
   },
   {
     path: 'game', canActivate: [AuthGuard], children: [
-      { path: '', component: GameIndexComponent }
+      { path: '', component: GameIndexComponent },
+      { path: 'create', component: GameCreateComponent }
     ]
   }
 ];

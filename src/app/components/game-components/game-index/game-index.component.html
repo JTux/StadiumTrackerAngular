@@ -16,33 +16,43 @@
 
     <ng-container matColumnDef="StadiumName">
       <mat-header-cell mat-sort-header *matHeaderCellDef>Stadium Name</mat-header-cell>
-      <mat-cell *matCellDef="let game">{{game.StadiumName}}</mat-cell>
+      <mat-cell *matCellDef="let game">
+        <a routerLink="/stadium/details/{{game.StadiumID}}">
+          {{game.StadiumName}}
+        </a>
+      </mat-cell>
     </ng-container>
 
     <ng-container matColumnDef="HomeTeamName">
       <mat-header-cell mat-sort-header *matHeaderCellDef>Home Team</mat-header-cell>
-      <mat-cell *matCellDef="let game">{{game.HomeTeamName}}</mat-cell>
+      <mat-cell *matCellDef="let game">
+        <a routerLink="/team/details/{{game.HomeTeamID}}">
+          <span *ngIf="!game.HomeTeamWon" style="color:gray;">{{game.HomeTeamName}}</span>
+          <span *ngIf="game.HomeTeamWon" style="font-weight: bold;">{{game.HomeTeamName}}</span>
+        </a>
+      </mat-cell>
     </ng-container>
 
     <ng-container matColumnDef="AwayTeamName">
       <mat-header-cell mat-sort-header *matHeaderCellDef>Away Team</mat-header-cell>
-      <mat-cell *matCellDef="let game">{{game.AwayTeamName}}</mat-cell>
-    </ng-container>
-
-    <ng-container matColumnDef="HomeTeamWon">
-      <mat-header-cell mat-sort-header *matHeaderCellDef>Home Team Won</mat-header-cell>
-      <mat-cell *matCellDef="let game">{{game.HomeTeamWon}}</mat-cell>
+      <mat-cell *matCellDef="let game">
+        <a routerLink="/team/details/{{game.AwayTeamID}}">
+          <span *ngIf="game.HomeTeamWon" style="color:gray;">{{game.AwayTeamName}}</span>
+          <span *ngIf="!game.HomeTeamWon" style="font-weight: bold;">{{game.AwayTeamName}}</span>
+        </a>
+      </mat-cell>
     </ng-container>
 
     <ng-container matColumnDef="DateOfGame">
       <mat-header-cell mat-sort-header *matHeaderCellDef>Date of Game</mat-header-cell>
-      <mat-cell *matCellDef="let game">{{game.DateOfGame}}</mat-cell>
+      <mat-cell *matCellDef="let game">{{game.DateOfGame | date:short}}</mat-cell>
     </ng-container>
 
     <ng-container matColumnDef="buttons">
       <mat-header-cell *matHeaderCellDef></mat-header-cell>
       <mat-cell *matCellDef="let game">
-        <i mat-icon class="material-icons" routerLink="details/{{game.GameID}}">library_books</i>
+        <i mat-icon class="material-icons" *ngIf="game.UserIsOwner" routerLink="edit/{{game.GameID}}">edit</i>
+        <i mat-icon class="material-icons" *ngIf="game.UserIsOwner" routerLink="delete/{{game.GameID}}">delete</i>
       </mat-cell>
     </ng-container>
   </mat-table>

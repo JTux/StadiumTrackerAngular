@@ -13,7 +13,9 @@ import {
   MatSidenavModule,
   MatCheckboxModule,
   MatSelectModule,
-  MatSortModule
+  MatSortModule,
+  MatDatepickerModule,
+  MatNativeDateModule
 } from '@angular/material';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -44,6 +46,7 @@ import { StadiumDetailComponent } from './components/stadium-components/stadium-
 import { StadiumEditComponent } from './components/stadium-components/stadium-edit/stadium-edit.component';
 import { StadiumDeleteComponent } from './components/stadium-components/stadium-delete/stadium-delete.component';
 import { GameIndexComponent } from './components/game-components/game-index/game-index.component';
+import { GameCreateComponent } from './components/game-components/game-create/game-create.component';
 
 @NgModule({
   declarations: [
@@ -65,7 +68,8 @@ import { GameIndexComponent } from './components/game-components/game-index/game
     StadiumDetailComponent,
     StadiumEditComponent,
     StadiumDeleteComponent,
-    GameIndexComponent
+    GameIndexComponent,
+    GameCreateComponent
   ],
   imports: [
     AppRoutingModule,
@@ -75,8 +79,10 @@ import { GameIndexComponent } from './components/game-components/game-index/game
     HttpClientModule,
     MatButtonModule,
     MatCheckboxModule,
+    MatDatepickerModule,
     MatFormFieldModule,
     MatInputModule,
+    MatNativeDateModule,
     MatSidenavModule,
     MatSelectModule,
     MatSortModule,
