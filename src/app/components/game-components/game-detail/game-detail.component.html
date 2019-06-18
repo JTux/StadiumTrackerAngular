@@ -1,0 +1,23 @@
+<div *ngIf="game">
+  <h1>{{game.HomeTeam.TeamName}} vs {{game.AwayTeam.TeamName}}</h1>
+  <div class="img-preview" routerLink="/game/details/{{game.HomeTeam.TeamID}}" style="cursor: pointer;"
+    [ngStyle]="{'background-image': 'url('+ game.HomeTeam.ImageData +')'}">
+  </div>
+  <div>
+    {{game.HomeTeam.TeamName}}
+  </div>
+  <div class="img-preview" routerLink="/game/details/{{game.AwayTeam.TeamID}}" style="cursor: pointer;"
+    [ngStyle]="{'background-image': 'url('+ game.AwayTeam.ImageData +')'}">
+  </div>
+  <div>
+    {{game.AwayTeam.TeamName}}
+  </div>
+
+  <div>
+      <button mat-raised-button routerLink="/game/edit/{{game.GameID}}" color="accent"
+        *ngIf="game.UserIsOwner">Edit</button>
+      <button mat-raised-button routerLink="/game/delete/{{game.GameID}}" color="warn"
+        *ngIf="game.UserIsOwner">Delete</button>
+      <button mat-raised-button routerLink="/game" color="primary">Back to List</button>
+    </div>
+</div>

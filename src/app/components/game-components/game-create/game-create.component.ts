@@ -43,7 +43,7 @@ export class GameCreateComponent implements OnInit {
       StadiumID: new FormControl,
       HomeTeamID: new FormControl,
       AwayTeamID: new FormControl,
-      HomeTeamWon: new FormControl
+      HomeTeamWon: new FormControl(false)
     });
   }
 

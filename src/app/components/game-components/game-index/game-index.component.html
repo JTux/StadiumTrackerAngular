@@ -14,6 +14,11 @@
       </mat-cell>
     </ng-container>
 
+    <ng-container matColumnDef="DateOfGame">
+      <mat-header-cell mat-sort-header *matHeaderCellDef>Date of Game</mat-header-cell>
+      <mat-cell *matCellDef="let game">{{game.DateOfGame | date:short}}</mat-cell>
+    </ng-container>
+
     <ng-container matColumnDef="StadiumName">
       <mat-header-cell mat-sort-header *matHeaderCellDef>Stadium Name</mat-header-cell>
       <mat-cell *matCellDef="let game">
@@ -41,11 +46,6 @@
           <span *ngIf="!game.HomeTeamWon" style="font-weight: bold;">{{game.AwayTeamName}}</span>
         </a>
       </mat-cell>
-    </ng-container>
-
-    <ng-container matColumnDef="DateOfGame">
-      <mat-header-cell mat-sort-header *matHeaderCellDef>Date of Game</mat-header-cell>
-      <mat-cell *matCellDef="let game">{{game.DateOfGame | date:short}}</mat-cell>
     </ng-container>
 
     <ng-container matColumnDef="buttons">

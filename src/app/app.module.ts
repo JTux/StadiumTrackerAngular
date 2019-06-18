@@ -47,6 +47,7 @@ import { StadiumEditComponent } from './components/stadium-components/stadium-ed
 import { StadiumDeleteComponent } from './components/stadium-components/stadium-delete/stadium-delete.component';
 import { GameIndexComponent } from './components/game-components/game-index/game-index.component';
 import { GameCreateComponent } from './components/game-components/game-create/game-create.component';
+import { GameDetailComponent } from './components/game-components/game-detail/game-detail.component';
 
 @NgModule({
   declarations: [
@@ -69,7 +70,8 @@ import { GameCreateComponent } from './components/game-components/game-create/ga
     StadiumEditComponent,
     StadiumDeleteComponent,
     GameIndexComponent,
-    GameCreateComponent
+    GameCreateComponent,
+    GameDetailComponent
   ],
   imports: [
     AppRoutingModule,

@@ -21,6 +21,7 @@ body {
     width: 116px;
     background-color: white;
     border: solid 1px black;
+    margin: auto;
 }
 
 .mat-cell div {
