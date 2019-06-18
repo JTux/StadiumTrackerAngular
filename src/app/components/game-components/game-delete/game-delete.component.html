@@ -25,11 +25,6 @@
       </div>
     </div>
   </div>
-  <div>
-    <button mat-raised-button routerLink="/game/edit/{{game.GameID}}" color="accent"
-      *ngIf="game.UserIsOwner">Edit</button>
-    <button mat-raised-button routerLink="/game/delete/{{game.GameID}}" color="warn"
-      *ngIf="game.UserIsOwner">Delete</button>
-    <button mat-raised-button routerLink="/game" color="primary">Back to List</button>
-  </div>
+  <button mat-raised-button (click)="onDelete()" color="warn" *ngIf="game.UserIsOwner">Delete</button>
+  <button mat-raised-button routerLink="/game/details/{{game.GameID}}" color="primary">Back to Team</button>
 </div>

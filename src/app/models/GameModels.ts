@@ -32,7 +32,17 @@ export interface GameListItem {
 	UserIsOwner: boolean;
 }
 
-export interface GameEdit {
+export class GameEdit {
+
+	constructor(gameID: number, homeTeamID: number, awayTeamID: number, stadiumID: number, homeTeamWon: boolean, dateOfGame: Date) {
+		this.GameID = gameID;
+		this.HomeTeamID = homeTeamID;
+		this.AwayTeamID = awayTeamID;
+		this.StadiumID = stadiumID;
+		this.HomeTeamWon = homeTeamWon;
+		this.DateOfGame = dateOfGame;
+	 }
+
 	GameID: number;
 	DateOfGame: Date;
 	StadiumID: number;

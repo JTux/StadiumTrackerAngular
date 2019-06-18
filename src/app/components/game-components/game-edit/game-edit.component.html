@@ -1,0 +1,45 @@
+<h1>Edit a game</h1>
+
+<div *ngIf="game">
+  <form (ngSubmit)="onSubmit()" [formGroup]="gameForm">
+    <div>
+      <mat-form-field>
+        <mat-select placeholder="Stadium" formControlName="StadiumID" required>
+          <mat-option *ngFor="let stadium of stadiums" [value]="stadium.StadiumID">
+            {{stadium.StadiumName}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field>
+        <mat-select placeholder="Home Team" formControlName="HomeTeamID" required>
+          <mat-option *ngFor="let team of teams" [value]="team.TeamID">
+            {{team.TeamName}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field>
+        <mat-select placeholder="Away Team" formControlName="AwayTeamID" required>
+          <mat-option *ngFor="let team of teams" [value]="team.TeamID">
+            {{team.TeamName}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field>
+        <input matInput [matDatepicker]="picker" placeholder="Date of Game" formControlName="DateOfGame" required>
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-checkbox formControlName="HomeTeamWon">Home Team Won</mat-checkbox>
+    </div>
+    <button mat-raised-button color="primary" type="submit">Update Game</button>
+  </form>
+</div>
+<a mat-button routerLink="/game">Back to Game Index</a>
