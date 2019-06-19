@@ -23,6 +23,9 @@ import { AppComponent } from './app.component';
 import { RegistrationComponent } from './components/registration/registration.component';
 import { LoginComponent } from './components/login/login.component';
 
+import { AuthService } from './services/auth.service';
+import { AuthGuard } from './guards/auth.guard';
+
 import { LeagueIndexComponent } from './components/league-components/league-index/league-index.component';
 import { LeagueCreateComponent } from './components/league-components/league-create/league-create.component';
 import { LeagueDetailComponent } from './components/league-components/league-detail/league-detail.component';
@@ -36,20 +39,19 @@ import { TeamEditComponent } from './components/team-components/team-edit/team-e
 import { TeamDeleteComponent } from './components/team-components/team-delete/team-delete.component';
 
 import { StadiumIndexComponent } from './components/stadium-components/stadium-index/stadium-index.component';
-
-import { AuthService } from './services/auth.service';
-import { LeagueService } from './services/league.service';
-import { TeamService } from './services/team.service';
-import { AuthGuard } from './guards/auth.guard';
 import { StadiumCreateComponent } from './components/stadium-components/stadium-create/stadium-create.component';
 import { StadiumDetailComponent } from './components/stadium-components/stadium-detail/stadium-detail.component';
 import { StadiumEditComponent } from './components/stadium-components/stadium-edit/stadium-edit.component';
 import { StadiumDeleteComponent } from './components/stadium-components/stadium-delete/stadium-delete.component';
+
 import { GameIndexComponent } from './components/game-components/game-index/game-index.component';
 import { GameCreateComponent } from './components/game-components/game-create/game-create.component';
 import { GameDetailComponent } from './components/game-components/game-detail/game-detail.component';
 import { GameEditComponent } from './components/game-components/game-edit/game-edit.component';
 import { GameDeleteComponent } from './components/game-components/game-delete/game-delete.component';
+
+import { VisitorIndexComponent } from './components/visitor-components/visitor-index/visitor-index.component';
+import { VisitorCreateComponent } from './components/visitor-components/visitor-create/visitor-create.component';
 
 @NgModule({
   declarations: [
@@ -75,7 +77,9 @@ import { GameDeleteComponent } from './components/game-components/game-delete/ga
     GameCreateComponent,
     GameDetailComponent,
     GameEditComponent,
-    GameDeleteComponent
+    GameDeleteComponent,
+    VisitorIndexComponent,
+    VisitorCreateComponent
   ],
   imports: [
     AppRoutingModule,
@@ -98,9 +102,7 @@ import { GameDeleteComponent } from './components/game-components/game-delete/ga
   ],
   providers: [
     AuthGuard,
-    AuthService,
-    LeagueService,
-    TeamService
+    AuthService
   ],
   bootstrap: [AppComponent]
 })

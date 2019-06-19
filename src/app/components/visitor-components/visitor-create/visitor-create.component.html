@@ -1,0 +1,19 @@
+<h1>Create a Visitor</h1>
+
+<form (ngSubmit)="onSubmit()" [formGroup]="visitorForm">
+  <div>
+    <div>
+      <mat-form-field>
+        <input matInput placeholder="First Name" formControlName="FirstName" required/>
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field>
+        <input matInput placeholder="Last Name" formControlName="LastName" required/>
+      </mat-form-field>
+    </div>
+  </div>
+  <button mat-raised-button color="primary" type="submit">Add Visitor</button>
+</form>
+
+<a mat-button routerLink="/visitor">Return to Visitor Index</a>

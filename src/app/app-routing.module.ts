@@ -23,6 +23,8 @@ import { GameCreateComponent } from './components/game-components/game-create/ga
 import { GameDetailComponent } from './components/game-components/game-detail/game-detail.component';
 import { GameEditComponent } from './components/game-components/game-edit/game-edit.component';
 import { GameDeleteComponent } from './components/game-components/game-delete/game-delete.component';
+import { VisitorIndexComponent } from './components/visitor-components/visitor-index/visitor-index.component';
+import { VisitorCreateComponent } from './components/visitor-components/visitor-create/visitor-create.component';
 
 const routes: Routes = [
   { path: 'register', component: RegistrationComponent },
@@ -61,6 +63,12 @@ const routes: Routes = [
       { path: 'details/:id', component: GameDetailComponent },
       { path: 'edit/:id', component: GameEditComponent },
       { path: 'delete/:id', component: GameDeleteComponent }
+    ]
+  },
+  {
+    path: 'visitor', canActivate: [AuthGuard], children: [
+      { path: '', component: VisitorIndexComponent },
+      { path: 'create', component: VisitorCreateComponent }
     ]
   }
 ];

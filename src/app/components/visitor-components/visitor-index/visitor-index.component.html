@@ -1,0 +1,30 @@
+<h1>Visitors</h1>
+<a mat-raised-button color="primary" routerLink="create">Create New</a>
+<hr />
+
+<div>
+  <mat-table matSort [dataSource]="dataSource">
+    <mat-header-row *matHeaderRowDef="columnNames"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: columnNames;"></mat-row>
+
+    <ng-container matColumnDef="details">
+      <mat-header-cell *matHeaderCellDef></mat-header-cell>
+      <mat-cell *matCellDef="let visitor">
+        <i mat-icon class="material-icons" routerLink="details/{{visitor.VisitorID}}">library_books</i>
+      </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="FullName">
+      <mat-header-cell mat-sort-header *matHeaderCellDef>Visitor Name</mat-header-cell>
+      <mat-cell *matCellDef="let visitor">{{visitor.FullName}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="buttons">
+      <mat-header-cell *matHeaderCellDef></mat-header-cell>
+      <mat-cell *matCellDef="let visitor">
+        <i mat-icon class="material-icons" routerLink="edit/{{visitor.VisitorID}}">edit</i>
+        <i mat-icon class="material-icons" routerLink="delete/{{visitor.VisitorID}}">delete</i>
+      </mat-cell>
+    </ng-container>
+  </mat-table>
+</div>
