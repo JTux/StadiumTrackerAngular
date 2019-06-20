@@ -1,3 +1,55 @@
-<p>
-  visit-index works!
-</p>
+<h1>Visits</h1>
+<a mat-raised-button color="primary">Record new Visit</a>
+<hr />
+
+<div>
+  <mat-table #table matSort [dataSource]="dataSource">
+    <mat-header-row *matHeaderRowDef="columnNames"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: columnNames;"></mat-row>
+
+    <ng-container matColumnDef="details">
+      <mat-header-cell *matHeaderCellDef></mat-header-cell>
+      <mat-cell *matCellDef="let visit">
+        <i mat-icon class="material-icons" routerLink="details/{{visit.VisitID}}">library_books </i>
+      </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="DateOfGame">
+      <mat-header-cell mat-sort-header *matHeaderCellDef>Date of Game</mat-header-cell>
+      <mat-cell *matCellDef="let visit">{{visit.Game.DateOfGame | date:short}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="Teams">
+      <mat-header-cell mat-sort-header *matHeaderCellDef>Teams</mat-header-cell>
+      <mat-cell *matCellDef="let visit">{{visit.Game.HomeTeam.TeamName}} vs {{visit.Game.AwayTeam.TeamName}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="Stadium">
+      <mat-header-cell mat-sort-header *matHeaderCellDef>Stadium</mat-header-cell>
+      <mat-cell *matCellDef="let visit">{{visit.Game.Stadium.StadiumName}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="Visitor">
+      <mat-header-cell mat-sort-header *matHeaderCellDef>Visitor</mat-header-cell>
+      <mat-cell *matCellDef="let visit">{{visit.Visitor.FullName}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="TookPhoto">
+      <mat-header-cell mat-sort-header *matHeaderCellDef>Took Photo</mat-header-cell>
+      <mat-cell *matCellDef="let visit">{{visit.TookPhoto}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="GotPin">
+      <mat-header-cell mat-sort-header *matHeaderCellDef>Got Pin</mat-header-cell>
+      <mat-cell *matCellDef="let visit">{{visit.GotPin}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="buttons">
+      <mat-header-cell mat-sort-header *matHeaderCellDef></mat-header-cell>
+      <mat-cell *matCellDef="let visit">
+        <i mat-icon class="material-icons" routerLink="edit/{{visit.GameID}}">edit</i>
+        <i mat-icon class="material-icons" routerLink="delete/{{visit.GameID}}">delete</i>
+      </mat-cell>
+    </ng-container>
+  </mat-table>
+</div>
