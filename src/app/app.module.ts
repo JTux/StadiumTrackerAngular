@@ -52,6 +52,7 @@ import { GameDeleteComponent } from './components/game-components/game-delete/ga
 
 import { VisitorIndexComponent } from './components/visitor-components/visitor-index/visitor-index.component';
 import { VisitorCreateComponent } from './components/visitor-components/visitor-create/visitor-create.component';
+import { VisitIndexComponent } from './components/visit-components/visit-index/visit-index.component';
 
 @NgModule({
   declarations: [
@@ -79,7 +80,8 @@ import { VisitorCreateComponent } from './components/visitor-components/visitor-
     GameEditComponent,
     GameDeleteComponent,
     VisitorIndexComponent,
-    VisitorCreateComponent
+    VisitorCreateComponent,
+    VisitIndexComponent
   ],
   imports: [
     AppRoutingModule,
