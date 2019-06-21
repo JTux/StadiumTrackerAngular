@@ -26,6 +26,7 @@ import { GameDeleteComponent } from './components/game-components/game-delete/ga
 import { VisitorIndexComponent } from './components/visitor-components/visitor-index/visitor-index.component';
 import { VisitorCreateComponent } from './components/visitor-components/visitor-create/visitor-create.component';
 import { VisitIndexComponent } from './components/visit-components/visit-index/visit-index.component';
+import { VisitCreateComponent } from './components/visit-components/visit-create/visit-create.component';
 
 const routes: Routes = [
   { path: 'register', component: RegistrationComponent },
@@ -74,7 +75,8 @@ const routes: Routes = [
   },
   {
     path: 'visit', canActivate: [AuthGuard], children: [
-      { path: '', component: VisitIndexComponent }
+      { path: '', component: VisitIndexComponent },
+      { path: 'create', component: VisitCreateComponent }
     ]
   }
 ];

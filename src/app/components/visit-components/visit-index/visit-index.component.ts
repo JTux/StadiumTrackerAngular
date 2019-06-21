@@ -21,7 +21,6 @@ export class VisitIndexComponent implements OnInit {
     this._visitService.getVisits().subscribe((visits: VisitDetail[]) => {
       this.dataSource = new MatTableDataSource<VisitDetail>(visits);
       this.dataSource.sort = this.sort;
-      console.log(visits);
     });
   }
 
