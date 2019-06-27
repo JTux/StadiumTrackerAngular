@@ -7,6 +7,13 @@ export interface GameCreate {
 	HomeTeamID: number;
 	AwayTeamID: number;
 	HomeTeamWon: boolean;
+	Visitors: GameVisitor[];
+}
+
+export interface GameVisitor {
+	VisitorID: number;
+	TookPhoto: boolean;
+	GotPin: boolean;
 }
 
 export interface GameDetail {
@@ -41,7 +48,7 @@ export class GameEdit {
 		this.StadiumID = stadiumID;
 		this.HomeTeamWon = homeTeamWon;
 		this.DateOfGame = dateOfGame;
-	 }
+	}
 
 	GameID: number;
 	DateOfGame: Date;
