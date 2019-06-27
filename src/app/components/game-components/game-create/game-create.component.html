@@ -40,6 +40,19 @@
     <div>
       <mat-checkbox formControlName="HomeTeamWon">Home Team Won</mat-checkbox>
     </div>
+    <div>
+      <a mat-raised-button color="primary" (click)="this.addVisitorField()">Add Visitor</a>
+    </div>
+    <div *ngFor="let i of visitors">
+      <div>
+        <div id="visitor{{i.value}}">
+          <select name="vis{{i.value}}">
+            <option *ngFor="let j of peopleList" value="{{j.VisitorID}}">{{j.FullName}}</option>
+          </select>
+          <span style="color: red" (click)="removeVisitor(i)">X</span>
+        </div>
+      </div>
+    </div>
   </div>
   <button mat-raised-button color="primary" type="submit">Create Game</button>
 </form>
