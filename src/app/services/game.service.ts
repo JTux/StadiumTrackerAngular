@@ -11,7 +11,6 @@ export class GameService {
   constructor(private _http: HttpClient) { }
 
   createGame(game: GameCreate) {
-    console.log(game);
     return this._http.post(`${Api_Url}/game`, game, { headers: this.getHeaders() });
   }
 

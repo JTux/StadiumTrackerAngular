@@ -13,9 +13,9 @@ import { GameVisitor } from 'src/app/models/GameModels';
 export class VisitorCreateModel {
   value: number;
   disabled: boolean;
-  visitorID: number;
-  gotPin: boolean;
-  tookPhoto: boolean;
+  visitorID = 0;
+  gotPin = false;
+  tookPhoto = false;
 
   constructor(value: number) {
     this.value = value;
@@ -90,6 +90,22 @@ export class GameCreateComponent implements OnInit {
     });
   }
 
+  toggleVisitorPinBool(id) {
+    this.visitors.forEach(v => {
+      if (v.value == id) {
+        v.gotPin ? v.gotPin = false : v.gotPin = true;
+      }
+    });
+  }
+
+  toggleVisitorPhotoBool(id) {
+    this.visitors.forEach(v => {
+      if (v.value == id) {
+        v.tookPhoto ? v.tookPhoto = false : v.tookPhoto = true;
+      }
+    });
+  }
+
   createForm() {
     this.gameForm = this._form.group({
       DateOfGame: new FormControl,
@@ -102,16 +118,16 @@ export class GameCreateComponent implements OnInit {
   }
 
   onSubmit() {
-    for(let boy of this.visitors) {
-      let visitorID = (<HTMLSelectElement>document.getElementById(`vis${boy.value}`)).value;
-      this.recordedVisitors.push({VisitorID: parseInt(visitorID), GotPin: boy.gotPin, TookPhoto: boy.tookPhoto});
+    for (let visitor of this.visitors) {
+      let visitorID = (<HTMLSelectElement>document.getElementById(`vis${visitor.value}`)).value;
+      this.recordedVisitors.push({ VisitorID: parseInt(visitorID), GotPin: visitor.gotPin, TookPhoto: visitor.tookPhoto });
     }
     this.gameForm.controls['Visitors'].setValue(this.recordedVisitors);
 
     this._gameService.createGame(this.gameForm.value).subscribe(() => {
       this._router.navigate(['/game']);
     });
-    
+
     this.recordedVisitors = new Array();
   }
 }
